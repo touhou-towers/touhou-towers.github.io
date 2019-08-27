@@ -56,7 +56,7 @@ window.onload = (async () => {
 	};
 	// ballrace tile setup
 	(() => {
-		const rowTileSize = 9;
+		const rowTileSize = 8;
 		const names = Object.keys(BALLRACE_NAMES);
 		const headerSection = document.getElementById("top");
 		
@@ -87,7 +87,7 @@ window.onload = (async () => {
 			inner.appendChild(button);
 			outer.appendChild(inner);
 		}
-		if (i % rowTileSize != 0)
+		if (i % rowTileSize == 0)
 			headerSection.insertBefore(outer, headerSection.childNodes[0]);
 	})()
 	
@@ -223,7 +223,6 @@ window.onload = (async () => {
 		button.classList.add("is-loading");
 		const clickables = document.getElementsByClassName("tile is-child box");
 		for (let i = 0; i < clickables.length; i++) {
-			if (clickables[i] !== button)
 				clickables[i].setAttribute("disabled", "");
 		}
 		try {
@@ -232,7 +231,8 @@ window.onload = (async () => {
 			console.error(e);
 		} finally {
 			for (let i = 0; i < clickables.length; i++) {
-				clickables[i].removeAttribute("disabled");
+				if (clickables[i] !== button)
+					clickables[i].removeAttribute("disabled");
 			}
 			button.classList.remove("is-loading");
 		}
