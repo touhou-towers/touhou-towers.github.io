@@ -85,7 +85,7 @@
 				document.getElementById("bartext").innerHTML = "Downloading: " + fileName;
 			}
 			function SetFilesNeeded(needed) {
-				setProgPct((total - needed) / total);
+				setProgPct((totalFiles - needed) / totalFiles);
 			}
 			function SetStatusChanged(status) {
 				document.getElementById("bartext").innerHTML = status;
@@ -96,7 +96,6 @@
 						break;
 					case "Received all Lua files we needed!":
 					case "No files to request!":
-					default:
 						setProgPct(1);
 				}
 			}
