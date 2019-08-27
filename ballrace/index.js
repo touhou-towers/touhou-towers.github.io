@@ -8,45 +8,51 @@ window.onload = (async () => {
 	const CONTENT_DIV_ID = "container-content";
 	const MAPPING = {
 		ballrace: {
-			gmt_ballracer_grassworld01: 8,
-			gmt_ballracer_iceworld03: 10,
-			gmt_ballracer_khromidro02: 11,
-			gmt_ballracer_memories04: 11, // 18?
-			gmt_ballracer_sandworld02: 10,
 			gmt_ballracer_skyworld01: 9,
+			gmt_ballracer_grassworld01: 8,
+			gmt_ballracer_memories02: 11,
+			gmt_ballracer_khromidro02: 11,
 			gmt_ballracer_paradise03: 13,
+			gmt_ballracer_sandworld02: 10,
+			gmt_ballracer_iceworld03: 10,
 			// i dont know the roundcount of any of these
 			// but ill set them at 8 to be safe
-			gmt_ballracer_metalworld: 8,
-			gmt_ballracer_midori: 8,
-			gmt_ballracer_neonlights: 8,
 			gmt_ballracer_nightball: 8,
-			gmt_ballracer_prism03: 8,
-			gmt_ballracer_rainbowworld: 8,
+			gmt_ballracer_facile: 8, // new
+			gmt_ballracer_flyinhigh01: 8, // new
+			gmt_ballracer_metalworld: 8,
+			gmt_ballracer_neonlights: 8,
+			gmt_ballracer_waterworld02: 8,
 			gmt_ballracer_spaceworld: 8,
-			gmt_ballracer_summit: 8,
-			gmt_ballracer_waterworld: 8,
-			gmt_ballracer_waterworld02: 8
+			gmt_ballracer_rainbowworld: 8,
+			gmt_ballracer_midorib5: 8,
+			
+			// gmt_ballracer_prism03: 8, // disabled
+			// gmt_ballracer_summit: 8, // disabled
+			// gmt_ballracer_waterworld: 8, // duplicate
+			// gmt_ballracer_memories04: 8 // seems unused?
 		}
 	};
 	const BALLRACE_NAMES = {
-		gmt_ballracer_grassworld01: "Grass World",
-		gmt_ballracer_iceworld03: "Ice World",
-		gmt_ballracer_khromidro02: "Khromidro",
-		gmt_ballracer_memories04: "Memories",
-		gmt_ballracer_metalworld: "Metal World",
-		gmt_ballracer_midori: "Midori",
-		gmt_ballracer_neonlights: "Neon Lights",
-		gmt_ballracer_nightball: "Night World",
-		gmt_ballracer_paradise03: "Paradise",
-		gmt_ballracer_prism03: "Prism",
-		gmt_ballracer_rainbowworld: "Rainbow World",
-		gmt_ballracer_sandworld02: "Sand World",
 		gmt_ballracer_skyworld01: "Sky World",
+		gmt_ballracer_grassworld01: "Grass World",
+		gmt_ballracer_memories02: "Memories",
+		gmt_ballracer_khromidro02: "Khromidro",
+		gmt_ballracer_paradise03: "Paradise",
+		gmt_ballracer_sandworld02: "Sand World",
+		gmt_ballracer_iceworld03: "Ice World",
+		gmt_ballracer_nightball: "Night World",
+		gmt_ballracer_facile: "Facile",
+		gmt_ballracer_flyinhigh01: "Flyin' High",
+		gmt_ballracer_metalworld: "Metal World",
+		gmt_ballracer_neonlights: "Neon Lights",
+		gmt_ballracer_waterworld02: "Water World",
 		gmt_ballracer_spaceworld: "Space World",
-		gmt_ballracer_summit: "Summit",
-		gmt_ballracer_waterworld: "Water World",
-		gmt_ballracer_waterworld02: "Water World"
+		gmt_ballracer_rainbowworld: "Rainbow World",
+		gmt_ballracer_midorib5: "Midori",
+
+		// gmt_ballracer_memories04: "Memories",
+		// gmt_ballracer_summit: "Summit",
 	};
 	// ballrace tile setup
 	(() => {
