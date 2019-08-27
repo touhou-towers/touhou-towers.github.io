@@ -115,12 +115,8 @@ window.onload = (async () => {
 			return Promise.resolve(cached(id));
 		return Promise.all(Array.from(Array(maxLevel), (_x, i) => i + 1)
 			.map(level => fetch([HOSTNAME, "ballrace", map, level].join("/"))
-				.then(data => data.text())
-				.then(data => {
-					data = JSON.parse(data);
-					if (data.err) throw new Error("Server error: " + data.err);
-					return data;
-				})
+				.then(data => data.json())
+				.then(data => data.err ? new Error("Server error: " + data.err) : data)
 			))
 			.then(allData => {
 				if (allData.length < 1) return;
@@ -163,6 +159,7 @@ window.onload = (async () => {
 		function setupTable(map, level) {
 			let table = document.createElement("table");
 			table.style.width = "50%";
+			table.style.margin = "1em auto";
 			table.classList.add("table");
 			table.classList.add("is-bordered");
 			let thead = document.createElement("thead");
