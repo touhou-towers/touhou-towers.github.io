@@ -23,8 +23,15 @@ window.onload = (async () => {
 	}
 
 	if (isOldData(GAMEMODE)) {
-		cache(GAMEMODE, await fetch([HOSTNAME, "players", GAMEMODE].join("/"))
-			.then(res => res.json()));
+		let loop = (function(i) {
+			if (i < 1) return;
+			return fetch([HOSTNAME, "players", GAMEMODE].join("/"))
+				.then(res => res.json())
+				.catch(err => loop(i - 1))
+		});
+		let data = await loop(5); // retry 5 times if we keep failing
+		if (!data) return; // TODO - actually give some kind of error
+		cache(GAMEMODE, data);
 	}
 	let data = cached(GAMEMODE).data;
 	
