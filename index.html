@@ -4,46 +4,99 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
-		<script type="text/javascript" src="./index.js"></script>
+		<script defer src='https://use.fontawesome.com/releases/v5.1.0/js/all.js'></script>
 		<style>
 			html, body {
 				min-height: 100vh;
 			}
-			table {
-				margin: 1em;
-			}
 			body {
 				background-image: url("resources/torii.jpg");
 				background-attachment: fixed;
+				position: relative;
+				height: 100%;
 			}
-			#top, .container, .hero {
-				background-color: rgba(240, 240, 240, 0.9);
-				border-radius: 0 0 1em 1em;
-				padding: 1em 1em 1em 1em;
+			.container {
+				background-color: rgba(100, 200, 240, 0.9);
+				border-radius: 7em 0 7em 0;
+				height: 75%;
+				position: absolute;
+				width: 75%;
+				margin: auto auto;
+				padding: 4em;
+				top: 0; left: 0; bottom: 0; right: 0;
 			}
-			#top {
-				position: fixed;
-				width: 100%;
-				z-index: 100;
-				border-radius: 0 0 1em 1em;
+			.square {
+				width: 40%;
+				height: 100%;
+				margin: 0.75em;
 			}
-			.column {
-				background-color: #55acee;
-				border-radius: 2em;
-				padding: 2em;
-				margin: 2em;
+			.rect {
+				height: 48%;
 			}
 		</style>
+		<script>
+			window.onload = (() => {
+				const sjl = "c3RlYW06Ly9jb25uZWN0LzEzLjgyLjEzMC4=";
+				const dlink = "=I1dXBVeyZ2LndmLkJ3bjNXak9yL6MHc0RHa";
+				document.getElementById("connecttoserver").href = atob(sjl) + 177;
+				document.getElementById("discordlink").href = atob(dlink.split('').reverse().join(''));
+			});
+		</script>
 	</head>
 	<body>
-		<section class="section" id="top">
-		</section>
-		<section class="section" id="section" style="padding-top:7rem">
-			<div class="content">
-				<div class="container" id="container-content">
-					<h1 class="title">Ballrace Records</h1>
-				</div>
+		<nav class="navbar" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item">
+					<!-- some icon -->
+				</a>
 			</div>
-		</section>
+			<div class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item" id="connecttoserver">
+						Join now
+					</a>
+				</div>
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+							<a id="discordlink">
+								<i title='Join my server' class='fab fa-discord' style="font-size:2.5em"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+		  </div>
+		</nav>
+		<div class="container">
+			<div class="tile is-ancestor rect">
+				<a class="tile is-parent square button" href="./ballrace/">
+					<article class="tile is-child box">
+						<p class="title">Ballrace Records</p>
+						Check out the fastest ballers in the Tower
+					</article>
+				</a>
+				<a class="tile is-parent square button" disabled>
+					<article class="tile is-child box">
+						<p class="title">Richest Players</p>
+						When your greed goes online
+					</article>
+				</a>
+			</div>
+			<br>
+			<div class="tile is-ancestor rect">
+				<a class="tile is-parent square button" disabled >
+					<article class="tile is-child box">
+						<p class="title">Most Active Players</p>
+						Who has no life? These guys
+					</article>
+				</a>
+				<a class="tile is-parent square button" disabled>
+					<article class="tile is-child box">
+						<p class="title">Tetris Maestros</p>
+						AKA the IQ leaderboards
+					</article>
+				</a>
+			</div>
+		</div>
 	</body>
 </html>
